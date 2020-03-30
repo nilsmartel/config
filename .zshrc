@@ -1,0 +1,1 @@
+/Users/nilsmartel/.zshrc
