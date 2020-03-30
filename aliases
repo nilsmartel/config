@@ -1,1 +1,76 @@
-/Users/nilsmartel/.oh-my-zsh/aliases
+
+# sourcing ZSH quickly
+alias ss="source ~/.zshrc"
+
+# git related
+alias clone="git clone"
+alias commit="git commit -am"
+alias add="git add"
+alias stash="git stash"
+alias branch="git branch"
+alias checkout="git checkout"
+alias pull="git pull"
+alias fetch="git fetch"
+alias push="git push"
+alias st="git status"
+alias stage="git stage"
+alias merge="git merge"
+
+# DevOps related
+alias dc="docker-compose"
+alias k="kubectl"
+
+# Prefer nvim
+alias vim="nvim"
+
+alias ls="exa"
+alias ll="exa -l"
+
+alias c=cargo
+
+# Syntax Highlighting
+alias yaml="bat -pl yaml"
+alias json="bat -pl json"
+
+alias list='exa -1'
+alias tree='exa -T'
+alias overview='exa -R -L 2'
+
+alias reset="exec -l $SHELL"
+
+alias kc_pods_resources="kubectl get pods -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name \
+  ,CPU limit:.spec.containers[*].resources.limits.cpu                             \
+  ,CPU req.:.spec.containers[*].resources.requests.cpu                            \
+  ,RAM limit:.spec.containers[*].resources.limits.memory                          \
+  ,RAM req.:.spec.containers[*].resources.requests.memory'"
+
+alias kc_pods_error="kubectl get pods -o wide --all-namespaces --field-selector=status.phase!=Running,status.phase!=Succeeded"
+
+alias cwatch="$HOME/.scripts/cheap_watch.sh"
+alias cheap_watch=cwatch
+
+# Opening Files with goland IDE
+alias goland='open -a GoLand'
+alias repl=evcxr
+alias cat='bat -p'
+
+alias python2=/usr/bin/python2
+alias python=python3
+alias pip=pip3
+
+alias brwe=brew
+alias editalias='vim $HOME/.oh-my-zsh/aliases'
+alias editci='vim ./.circleci/config.yml'
+
+alias g=glooctl
+alias ci=circleci
+alias openclc=/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/openclc
+alias github='open -a Github\ Desktop'
+alias vide=neovide
+
+alias esl='eslint "**/*.ts" --ignore-pattern node_modules/ --ignore-pattern lib/'
+alias out=checkout
+
+alias npm-registry-github="npm set registry https://npm.pkg.github.com"
+alias npm-registry-npm="npm set registry https://registry.npmjs.org/"
+
