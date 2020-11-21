@@ -1,0 +1,27 @@
+
+# set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $random_theme
+# see https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+ZSH_THEME="kardan" # maybe [amuse, avit, cloud, kardan]
+plugins=(git cargo ripgrep kubectl docker)
+
+export EDITOR=nvim
+export LANG=de_DE.UTF-8
+
+export GOPATH="$HOME/go:$HOME/Development/go:$HOME/Graphmasters"
+export GOROOT=/usr/local/Cellar/go/1.15.3/libexec
+export GOPRIVATE="github.com/Graphmasters/*"
+
+export PATH="$HOME/.local/bin:$HOME/Scripts:$HOME/go/bin:$HOME/.llvm/bin:$PATH"
+export PATH=$PATH:$HOME/Applications
+source $HOME/.cargo/env
+source $HOME/aliases
+
+autoload -U compinit
+compinit
+
+alias help='echo no help today'
+
+export HISTSIZE=5000000
+export SAVEHIST=10000000
