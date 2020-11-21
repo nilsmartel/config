@@ -16,7 +16,7 @@ export GOPRIVATE="github.com/Graphmasters/*"
 export PATH="$HOME/.local/bin:$HOME/Scripts:$HOME/go/bin:$HOME/.llvm/bin:$PATH"
 export PATH=$PATH:$HOME/Applications
 source $HOME/.cargo/env
-source $HOME/aliases
+source $HOME/aliases.sh
 
 autoload -U compinit
 compinit
