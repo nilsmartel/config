@@ -42,7 +42,6 @@ alias goland='open -a GoLand'
 alias rust=evcxr
 alias cat='bat -p'
 
-alias python2="{{which python2}}"
 alias python="{{which python3}}"
 
 alias github='open -a Github\ Desktop'
