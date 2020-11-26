@@ -16,5 +16,4 @@ fi
 string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
 string template <./aliases-template.sh >"$HOME/aliases.sh"
-mkdir -p $HOME/.config/alacritty
-string template <./alacritty-template.yml >"$HOME/.config/alacritty/alacritty.yml"
+string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
