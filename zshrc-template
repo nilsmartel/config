@@ -25,3 +25,6 @@ alias help='echo no help today'
 
 export HISTSIZE=5000000
 export SAVEHIST=10000000
+
+PROMPT="
+λ "
