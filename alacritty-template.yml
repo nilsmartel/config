@@ -46,7 +46,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: firacode
+    family: Monofur # firacode
 
   size: 14.0
 
