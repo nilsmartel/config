@@ -13,7 +13,14 @@ if ! command -v string; then
     cargo install shell-string
 fi
 
+echo "finding git-delta"
+if ! command -v delta; then
+    echo "installing git-delta"
+    cargo install git-delta
+fi
+
 string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
 string template <./aliases-template.sh >"$HOME/aliases.sh"
 string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
+cp gitconfig $HOME/.gitconfig
