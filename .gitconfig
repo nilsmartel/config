@@ -1,0 +1,39 @@
+[user]
+	name = Nils Martel
+	email = nilsmartel@yahoo.de
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[cola]
+	spellcheck = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pull]
+	rebase = true
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+# Use delta, because delta is awesome!
+# install delta using `cargo install git-delta`
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+
+# VScode is a very nice tool for managing merge conflicts
+[merge]
+        tool = vscode
+[mergetool "vscode"]
+        cmd = code --wait $MERGED
