@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# make main the default git branch
+git config --global init.defaultBranch main
+git config --global user.name = "Nils Martel"
+git config --global user.email = "nilsmartel@yahoo.de"
+
+
 echo "finding cargo"
 if ! command -v cargo; then
     echo "installing cargo"
