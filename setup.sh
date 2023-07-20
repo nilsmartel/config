@@ -23,6 +23,7 @@ if ! command -v cargo; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source $HOME/.cargo/env
 fi
+
 cargoinstall() {
     echo "finding $1"
     if ! command -v $2; then
@@ -42,6 +43,8 @@ string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
 string template <./aliases-template.sh >"$HOME/aliases.sh"
 string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
+mkdir -p $HOME/.config/helix
+cp ./helix.toml > $HOME/.config/helix/config.toml
 cp gitconfig $HOME/.gitconfig
 
 cargoinstall helix

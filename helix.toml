@@ -1,0 +1,61 @@
+# Autocomplete on point is [C-x] in insert mode.
+# Docs for symbol is [space + k]
+# Code Action is [space + a]
+
+# 
+# https://docs.helix-editor.com/keymap.html
+# theme = "onelight"
+theme = "onedark"
+
+[editor]
+mouse = true
+shell = ["zsh", "-c"]
+cursorline = true
+idle-timeout = 5
+true-color = true
+bufferline = "always"
+color-modes = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+y = "yank_joined_to_clipboard"
+D = ["yank_main_selection_to_clipboard", "delete_selection"]
+V = "extend_to_line_end"
+
+C-f = ":fmt"
+C-h = "goto_previous_buffer"
+C-l = "goto_next_buffer"
+C-b = ":buffer-close"
+
+"K" = ["goto_prev_paragraph", "collapse_selection"]
+"J" = ["goto_next_paragraph", "collapse_selection"]
+
+"H" = "goto_line_start"
+"L" = "goto_line_end"
+
+[keys.select]
+p = "replace_selections_with_clipboard"
+y = "yank_joined_to_clipboard"
+
+"K" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+"J" = ["extend_to_line_bounds", "goto_next_paragraph"]
+"H" = "goto_line_start"
+"L" = "goto_line_end"
