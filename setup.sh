@@ -23,19 +23,20 @@ if ! command -v cargo; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source $HOME/.cargo/env
 fi
+cargoinstall() {
+    echo "finding $1"
+    if ! command -v $2; then
+        echo "installing $1"
+        cargo install $1
+    fi
+}
 
-echo "finding shell-string"
-if ! command -v string; then
-    echo "installing shell-string"
-    cargo install shell-string
-fi
+cargoinstall shell-string string
+cargoinstall git-delta delta
+cargoinstall ripgrep rg
+cargoinstall bat bat
+echo 'alias cat=bat' >> $HOME/.profile
 
-
-echo "finding git-delta"
-if ! command -v delta; then
-    echo "installing git-delta"
-    cargo install git-delta
-fi
 
 string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
@@ -43,17 +44,7 @@ string template <./aliases-template.sh >"$HOME/aliases.sh"
 string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
 cp gitconfig $HOME/.gitconfig
 
-echo
-echo "less essential but still useful"
+cargoinstall helix
 
-echo "finding ripgrep"
-if ! command -v rg; then
-    echo "installing ripgrep"
-    cargo install ripgrep
-fi
-
-echo "finding bat"
-if ! command -v bat; then
-    echo "installing bat"
-    cargo install bat
-fi
+echo "installing language servers"
+npm i -g vscode-langservers-extracted
