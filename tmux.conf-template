@@ -3,7 +3,8 @@ set-window-option -g mode-keys vi
 set-option -sg escape-time 10
 set-option -g default-terminal "{{printf $TERM}}"
 set-option -sa terminal-overrides ',{{printf $TERM}}:RGB'
-# set -g default-shell {{which fish || true }}
+set-option -g status-right ""
+
 set -g default-shell {{which zsh}}
 bind '%' split-window -h -c '#{pane_current_path}'  # Split panes horizontal
 bind '"' split-window -v -c '#{pane_current_path}'  # Split panes vertically
