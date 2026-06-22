@@ -46,11 +46,7 @@ string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
 string template <./aliases-template.sh >"$HOME/aliases.sh"
 string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
-mkdir -p $HOME/.config/helix
-cp ./helix.toml > $HOME/.config/helix/config.toml
 cp gitconfig $HOME/.gitconfig
-
-cargoinstall helix
 
 echo "installing language servers"
 npm i -g vscode-langservers-extracted
