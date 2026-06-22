@@ -6,10 +6,12 @@ git config --global user.name = "Nils Martel"
 git config --global user.email = "nilsmartel@yahoo.de"
 
 # Install neovim (latest version)
-brew install --HEAD neovim
-# installing vimplug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if ! command -v nvim; then
+    brew install --HEAD neovim
+elif
+    echo "neovim installed"
+fi
+
 
 brew install --HEAD tmux
 brew install --HEAD zsh
@@ -33,6 +35,7 @@ cargoinstall() {
 }
 
 cargoinstall shell-string string
+cargoinstall fd-find fd
 cargoinstall git-delta delta
 cargoinstall ripgrep rg
 cargoinstall bat bat
