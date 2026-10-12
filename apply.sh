@@ -40,6 +40,10 @@ cargoinstall git-delta delta
 cargoinstall ripgrep rg
 cargoinstall bat bat
 
+mkdir -p $HOME/.config
+git clone git@github.com:nilsmartel/config-zed.git $HOME/.config/zed
+git clone git@github.com:nilsmartel/kickstart.nvim.git $HOME/.config/nvim
+
 
 string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
