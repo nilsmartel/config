@@ -39,13 +39,11 @@ cargoinstall fd-find fd
 cargoinstall git-delta delta
 cargoinstall ripgrep rg
 cargoinstall bat bat
-echo 'alias cat=bat' >> $HOME/.profile
 
 
 string template <./zshrc-template >"$HOME/.zshrc"
 string template <./tmux.conf-template >"$HOME/.tmux.conf"
 string template <./aliases-template.sh >"$HOME/aliases.sh"
-string template <./alacritty-template.yml >"$HOME/.alacritty.yml"
 cp gitconfig $HOME/.gitconfig
 
 echo "installing language servers"
